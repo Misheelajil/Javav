@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+import java.security.*;
+import java.math.*;
+
+public class Solution {
+    public static final Scanner CONSOLE = new Scanner(System.in);
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        try{
+          String s=CONSOLE.nextLine();
+           MessageDigest m=MessageDigest.getInstance("MD5");
+           m.update(s.getBytes(),0,s.length());
+           System.out.println(new BigInteger(1,m.digest()).toString(16));
+        
+         } catch(NoSuchAlgorithmException e){
+        throw new IllegalStateException (e);            // Always must return something
+    }
+    }
+}
+
